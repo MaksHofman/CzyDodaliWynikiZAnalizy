@@ -69,13 +69,18 @@ def wyniki_zmatmy():
 def calosc_w_loopie():
     print('start')
     wyniki = wyniki_zmatmy()
+    x = 0
     while True:
+        print(f'Ping{x}')
         print(wyniki)
         time.sleep(360)
         wyniki_2 = wyniki_zmatmy()
         for x in range(len(wyniki_2)):
             if wyniki[x] != wyniki_2[x]:
+                print(f"Masz wyniki juz {wyniki_2}")
                 pyautogui.alert("Masz wyniki")
+                return 0
         print(wyniki_2)
+        x+=1
 if __name__=="__main__":
     calosc_w_loopie()
